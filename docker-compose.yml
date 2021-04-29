@@ -51,7 +51,7 @@ services:
       - ./src:/src
       - bundle-data:/usr/local/bundle
       #ソケット通信用ファイルをnginxコンテナと共有
-      - tmp-data:/src/tmp/sockets 
+      - tmp-data:/src/tmp/sockets
     command: bundle exec puma -b unix:///src/tmp/sockets/puma.sock
     environment:
       TZ: "Asia/Tokyo"

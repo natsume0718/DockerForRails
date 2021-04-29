@@ -17,34 +17,49 @@ This is a Rails environment created with Docker.
 cp .env.example .env
 ```
 
-## Build
-
-In the console, do the this.
-
-```
-make build
-# OR
-docker-compose build
-```
-
 ## Rails Project
 
 If you have an existing project, place it under src.
 For a new project, enter this command from the console.
 
 ```
-docker-compose run --rm rails rails new . --force --database=mysql --skip-test --skip-turbolinks
+docker-compose run --rm rails rails new . --force  --skip-bundle --database=mysql --skip-test --skip-turbolinks
 ```
-※First time installation is long
 
-## Start Container
+## Build And Start Container
 
 In the console, do the this.
 
 ```
-make up
-# OR
+docker-compose up -d --build
+```
+
+ ### How to stop a container
+
+ ```
+ docker-compose down
+ ```
+
+ ### Second or later activation
+
+ ``` 
 docker-compose up -d
+ ```
+
+## Set MySQL Connection Info
+
+open `src/config/database.yml`.
+Rewrite `default` as follows
+
+```yml
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: <%= ENV.fetch('DB_DATABASE', 'rails') %>
+  username: <%= ENV.fetch('DB_USERNAME', 'homestead') %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'secret') %>
+  host: <%= ENV.fetch('DB_HOST', 'rails_db') %>
 ```
 
 ## Let's Enjoy Rails
