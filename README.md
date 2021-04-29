@@ -19,7 +19,7 @@ cp .env.example .env
 
 ## Rails Project
 
-If you have an existing project, place it under src.
+If you have an existing project, place it under src.  
 For a new project, enter this command from the console.
 
 ```
@@ -64,4 +64,4 @@ default: &default
 
 ## Let's Enjoy Rails
 
-Acess `http:localhost:8080` in the browser.
+Acess `http:localhost` in the browser.
