@@ -11,6 +11,12 @@ This is a Rails environment created with Docker.
 
 # How to Use
 
+## Copy And Rename Env File
+
+```
+cp .env.example .env
+```
+
 ## Build
 
 In the console, do the this.

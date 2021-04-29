@@ -18,7 +18,7 @@ RUN mkdir -p $RAILS_ROOT
 
 WORKDIR $RAILS_ROOT
 
-RUN mkdir -p tmp/sockets
+RUN mkdir -p $RAILS_ROOT/tmp/sockets
 
 RUN node -v && yarn -v
 
