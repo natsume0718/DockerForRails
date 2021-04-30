@@ -69,3 +69,18 @@ Acess `http:localhost` in the browser.
 # appendix
 
 ## Use VSCode Remote Container
+
+With VSCode's RemoteContainer, you get a comfortable Rails integrated development environment.  
+It comes with pre-configured sample files, so all you have to do is launch it.
+
+Let's switch branches first.
+
+`git checkout vsc-dev`
+
+Second, open the Remote Explorer from the sidebar of VSCode as a Container.
+
+Next, click "Attach to Container" in the "rails-docker" selection field that appears.
+
+Let's open "/var/www".
+
+Have a pleasant development.
