@@ -23,7 +23,7 @@ If you have an existing project, place it under src.
 For a new project, enter this command from the console.
 
 ```
-docker-compose run --rm rails rails new . --force  --skip-bundle --database=mysql --skip-test --skip-turbolinks
+docker-compose run --rm rails rails new . --force --database=mysql --skip-test --skip-turbolinks
 ```
 
 ## Build And Start Container
@@ -34,17 +34,17 @@ In the console, do the this.
 docker-compose up -d --build
 ```
 
- ### How to stop a container
+### How to stop a container
 
- ```
- docker-compose down
- ```
+```
+docker-compose down
+```
 
- ### Second or later activation
+### Second or later activation
 
- ``` 
+```
 docker-compose up -d
- ```
+```
 
 ## Set MySQL Connection Info
 
@@ -65,3 +65,7 @@ default: &default
 ## Let's Enjoy Rails
 
 Acess `http:localhost` in the browser.
+
+# appendix
+
+## Use VSCode Remote Container

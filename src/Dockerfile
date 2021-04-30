@@ -13,7 +13,7 @@ RUN apt-get update && \
     apt-get clean
 
 #Railsアプリのルートディレクトリ作成
-ENV RAILS_ROOT /src
+ENV RAILS_ROOT /var/www/src
 RUN mkdir -p $RAILS_ROOT
 
 WORKDIR $RAILS_ROOT
@@ -26,4 +26,5 @@ RUN node -v && yarn -v
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 
+RUN gem install puma
 RUN bundle install --jobs 20 --retry 5 --without production
