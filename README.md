@@ -62,6 +62,18 @@ default: &default
   host: <%= ENV.fetch('DB_HOST', 'rails_db') %>
 ```
 
+## Update Reload Setting
+
+By default, Rails can't detect changes that are volumed by Docker.  
+So, in `development.rn`, set `config.file_watcher` to `ActiveSupport::FileUpdateChecker`  
+
+```
+  config.file_watcher = ActiveSupport::FileUpdateChecker
+```
+
+[For more information, please refer to this article.](https://qiita.com/Kiyo_Karl2/items/147d604e625b8a55e12e)
+
+
 ## Let's Enjoy Rails
 
 Acess `http:localhost` in the browser.
