@@ -18,7 +18,7 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/logs:/var/log/nginx
-      - tmp-data:/var/www/src/tmp/sockets
+      - tmp-data:/var/www/src/tmp
     depends_on:
       - rails
     networks:
@@ -51,7 +51,7 @@ services:
       - .:/var/www
       - bundle-data:/usr/local/bundle
       #ソケット通信用ファイルをnginxコンテナと共有
-      - tmp-data:/var/www/src/tmp/sockets
+      - tmp-data:/var/www/src/tmp
     command: bundle exec puma -b unix:///var/www/src/tmp/sockets/puma.sock
     environment:
       TZ: 'Asia/Tokyo'
