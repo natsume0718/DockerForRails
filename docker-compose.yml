@@ -52,7 +52,7 @@ services:
       - bundle-data:/usr/local/bundle
       #ソケット通信用ファイルをnginxコンテナと共有
       - tmp-data:/var/www/src/tmp
-    command: bundle exec puma -b unix:///var/www/src/tmp/sockets/puma.sock
+    command: puma -b unix:/var/www/src/tmp/sockets/puma.sock
     environment:
       TZ: 'Asia/Tokyo'
       DB_HOST: rails_db
